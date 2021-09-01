@@ -87,3 +87,23 @@ class EpsilonGreedyAgent(object):
             
         return {"arms": arm_counts, "rewards":rewards, "cum_rewards":cum_rewards}
     
+    
+"""
+you can check the algorithm by this example 
+
+environment = Env(reward_probas=[0.01, 1.0, 0.75, 0.99, 0.65, 1.0], rewards=[95.0, 0.0, 25.5, 10.05, 5.45, 2.50])
+print(f"Reward Probas\t\t: {environment.reward_probas}")
+print(f"Rewards \t\t: {environment.rewards}")
+    
+random_agent = RandomAgent(env=environment, max_iterations=2000)
+ra_history = random_agent.act()
+print(f"TOTAL REWARD : {sum(ra_history['rewards'])}")
+
+plot_history(ra_history)
+
+egreedy_agent = EpsilonGreedyAgent(environment, max_iterations=2000, epsilon =0.1)
+eg_history = egreedy_agent.act()
+print(f"TOTAL REWARD : {sum(eg_history['rewards'])}")
+
+plot_history(eg_history)
+"""
